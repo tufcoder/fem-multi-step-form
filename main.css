@@ -62,6 +62,7 @@ button {
 }
 
 input {
+    outline: 0;
     font: inherit;
 }
 
@@ -136,7 +137,9 @@ input {
     }
 
     .label {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         /* 4px */
         margin-block-end: 0.25rem;
         font-weight: var(--fw-semi-bold);
@@ -154,6 +157,19 @@ input {
             font-weight: inherit;
             color: var(--coolGray);
         }
+
+        &:focus,
+        &:active {
+            border-color: var(--purplishBlue);
+        }
+
+        &:required {
+            border-color: var(--strawberryRed);
+        }
+    }
+
+    .field-required {
+        color: var(--strawberryRed);
     }
 }
 
@@ -165,10 +181,15 @@ input {
     border-radius: 0.5rem;
     padding: 1rem;
     cursor: pointer;
+    transition: all .3s;
 
     &[data-plan-selected=true] {
-        border-color: var(--pastelBlue);
+        border-color: var(--purplishBlue);
         background-color: var(--veryLightPastelBlue);
+    }
+
+    &:hover {
+        border-color: var(--purplishBlue);
     }
 }
 
@@ -208,12 +229,24 @@ input {
     justify-content: center;
     gap: 0.5rem;
 
-    input {
-        display: none;
+    span {
+        color: var(--coolGray);
     }
 
-    span+span {
-        color: var(--coolGray);
+    &:has(input:checked) {
+        span+span {
+            color: var(--marineBlue);
+        }
+    }
+
+    &:not(:has(input:checked)) {
+        span:first-child {
+            color: var(--marineBlue);
+        }
+    }
+
+    input {
+        display: none;
     }
 }
 
@@ -232,8 +265,7 @@ input {
     height: 0.75rem;
     display: inline-block;
     content: '';
-    margin-block-start: 0.25rem;
-    margin-inline-start: 0.25rem;
+    margin-inline: 0.25rem;
     background-color: var(--white);
     transition: inherit;
 }
@@ -255,14 +287,16 @@ input {
     }
 }
 
-.check-item {
+.addon-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border: 1px solid var(--lightGray);
     border-radius: 0.5rem;
     padding: 1rem;
-    font-size: var(--fs-12);
+    font-size: var(--fs-14);
+    cursor: pointer;
+    transition: all .3s;
 
     .service-wrapper {
         display: flex;
@@ -270,17 +304,22 @@ input {
         gap: 0.5rem;
     }
 
-    &:has(.check-item-input:checked) {
+    &:hover {
+        border-color: var(--purplishBlue);
+    }
+
+    &:has(.addon-item-input:checked) {
         border-color: var(--purplishBlue);
         background-color: var(--veryLightPastelBlue);
     }
 
-    .check-item-input {
+    .addon-item-input {
         appearance: none;
         width: 1.125rem;
         height: 1.125rem;
-        display: grid;
-        place-items: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border: 1px solid var(--lightGray);
         border-radius: 0.25rem;
 
@@ -291,15 +330,18 @@ input {
             &::after {
                 content: '\2714';
                 color: var(--white);
+                font-size: var(--fs-12);
             }
-
         }
     }
 
     h2,
-    p,
-    span {
+    p {
         font-size: inherit;
+    }
+
+    span {
+        font-size: var(--fs-12);
     }
 }
 
@@ -323,6 +365,15 @@ input {
             background: none;
             text-decoration: underline;
             color: var(--coolGray);
+            transition: color .3s;
+
+            &:hover {
+                color: var(--purplishBlue);
+            }
+        }
+
+        span {
+            font-weight: var(--fw-bold);
         }
     }
 
@@ -344,6 +395,11 @@ input {
     align-items: center;
     justify-content: space-between;
     padding-inline: 1rem;
+
+    span {
+        font-weight: var(--fw-bold);
+        color: var(--purplishBlue);
+    }
 }
 
 .thanks {
@@ -401,6 +457,11 @@ input {
     #button-confirm {
         padding-inline: 1.5rem;
         background-color: var(--purplishBlue);
+        transition: background-color .3s;
+
+        &:hover {
+            background-color: var(--pastelBlue);
+        }
     }
 }
 

@@ -51,31 +51,40 @@
         </aside>
 
         <main class="main">
-            <section class="step">
+            <section id="step-1" class="step">
                 <h1>Personal info</h1>
                 <p>Please provide your name, email address, and phone number.</p>
 
                 <div>
-                    <label class="label" for="name">Name</label>
+                    <label class="label" for="name">
+                        <span>Name</span>
+                        <span class="field-required hidden">This field is required</span>
+                    </label>
                     <input class="input" type="text" name="name" id="name" placeholder="e.g. Stephen King">
                 </div>
 
                 <div>
-                    <label class="label" for="email">Email Address</label>
+                    <label class="label" for="email">
+                        <span>Email Address</span>
+                        <span class="field-required hidden">This field is required</span>
+                    </label>
                     <input class="input" type="email" name="email" id="email" placeholder="e.g. stephenking@lorem.com">
                 </div>
 
                 <div>
-                    <label class="label" for="tel">Phone Number</label>
+                    <label class="label" for="tel">
+                        <span>Phone Number</span>
+                        <span class="field-required hidden">This field is required</span>
+                    </label>
                     <input class="input" type="tel" name="tel" id="tel" placeholder="e.g. +1 234 567 890">
                 </div>
             </section>
 
-            <section class="step hidden">
+            <section id="step-2" class="step hidden">
                 <h1>Select your plan</h1>
                 <p>You have the option of monthly or yearly billing.</p>
 
-                <div class="plan-item" data-plan-selected="true">
+                <div id="plan-arcade" class="plan-item" data-plan-selected="false">
                     <img src="assets/images/icon-advanced.svg" alt="icon advanced" width="40" height="40">
                     <div class="plan-item-info">
                         <h2>Arcade</h2>
@@ -84,7 +93,7 @@
                     </div>
                 </div>
 
-                <div class="plan-item" data-plan-selected="false">
+                <div id="plan-advance" class="plan-item" data-plan-selected="false">
                     <img src="assets/images/icon-arcade.svg" alt="icon advanced" width="40" height="40">
                     <div class="plan-item-info">
                         <h2>Advanced</h2>
@@ -93,7 +102,7 @@
                     </div>
                 </div>
 
-                <div class="plan-item" data-plan-selected="false">
+                <div id="plan-pro" class="plan-item" data-plan-selected="false">
                     <img src="assets/images/icon-pro.svg" alt="icon advanced" width="40" height="40">
                     <div class="plan-item-info">
                         <h2>Pro</h2>
@@ -115,13 +124,13 @@
                 <!-- Next Step -->
             </section>
 
-            <section class="step hidden">
+            <section id="step-3" class="step hidden">
                 <h1>Pick add-ons</h1>
                 <p>Add-ons help enhance your gaming experience.</p>
 
-                <label for="online-service" class="check-item">
+                <label for="online-service" class="addon-item">
                     <div class="service-wrapper">
-                        <input class="check-item-input" type="checkbox" name="online-service" id="online-service">
+                        <input class="addon-item-input" type="checkbox" name="online-service" id="online-service">
                         <div>
                             <h2>Online service</h2>
                             <p>Access to multiplayer games</p>
@@ -130,9 +139,9 @@
                     <span>+$1/mo</span>
                 </label>
 
-                <label for="larger-storage" class="check-item">
+                <label for="larger-storage" class="addon-item">
                     <div class="service-wrapper">
-                        <input class="check-item-input" type="checkbox" name="larger-storage" id="larger-storage">
+                        <input class="addon-item-input" type="checkbox" name="larger-storage" id="larger-storage">
                         <div>
                             <h2>Larger storage</h2>
                             <p>Extra 1TB of cloud save</p>
@@ -141,9 +150,9 @@
                     <span>+$2/mo</span>
                 </label>
 
-                <label for="custom-profile" class="check-item">
+                <label for="custom-profile" class="addon-item">
                     <div class="service-wrapper">
-                        <input class="check-item-input" type="checkbox" name="custom-profile" id="custom-profile">
+                        <input class="addon-item-input" type="checkbox" name="custom-profile" id="custom-profile">
                         <div>
                             <h2>Customizable Profile</h2>
                             <p>Custom theme on your profile</p>
@@ -156,7 +165,7 @@
                 <!-- Next Step -->
             </section>
 
-            <section class="step hidden">
+            <section id="step-4" class="step hidden">
                 <h2>Finishing up</h2>
                 <p>Double-check everything looks OK before confirming.</p>
 
@@ -165,7 +174,7 @@
                     <div class="resume-plan-container">
                         <div>
                             <h3>Arcade (Monthly)</h3>
-                            <button>Change</button>
+                            <button id="button-change-plan">Change</button>
                         </div>
                         <span>$9/mo</span>
                     </div>
@@ -181,7 +190,7 @@
                 <!-- Confirm -->
             </section>
 
-            <section class="step thanks hidden">
+            <section id="step-5" class="step thanks hidden">
                 <img src="assets/images/icon-thank-you.svg" alt="icon thank you" width="80" height="80">
 
                 <h1>Thank you!</h1>
@@ -195,7 +204,7 @@
         </main>
 
         <div class="footer-step">
-            <button id="button-go-back" class="invisiblee">Go Back</button>
+            <button id="button-go-back" class="invisible">Go Back</button>
             <button id="button-next-step">Next Step</button>
             <button type="submit" id="button-confirm" class="hidden">Confirm</button>
         </div>
