@@ -23,28 +23,28 @@
 </head>
 
 <body>
-    <form class="app-container">
+    <form class="app-container" novalidate>
         <aside class="aside">
             <div class="step-item">
-                <button value="1" data-step-active="true" class="button-step">1</button>
+                <div value="1" data-step-active="true" class="button-step">1</div>
                 <p class="step-number">Step 1</p>
                 <p class="step-title">Your info</p>
             </div>
 
             <div class="step-item">
-                <button value="2" data-step-active="false" class="button-step">2</button>
+                <div value="2" data-step-active="false" class="button-step">2</div>
                 <p class="step-number">Step 2</p>
                 <p class="step-title">Select plan</p>
             </div>
 
             <div class="step-item">
-                <button value="3" data-step-active="false" class="button-step">3</button>
+                <div value="3" data-step-active="false" class="button-step">3</div>
                 <p class="step-number">Step 3</p>
                 <p class="step-title">Add-ons</p>
             </div>
 
             <div class="step-item">
-                <button value="4" data-step-active="false" class="button-step">4</button>
+                <div value="4" data-step-active="false" class="button-step">4</div>
                 <p class="step-number">Step 4</p>
                 <p class="step-title">Summary</p>
             </div>
@@ -88,16 +88,16 @@
                     <img src="assets/images/icon-advanced.svg" alt="icon advanced" width="40" height="40">
                     <div class="plan-item-info">
                         <h2>Arcade</h2>
-                        <p>$9/mo</p>
+                        <p id="plan-arcade-price">$9/mo</p>
                         <span>2 months free</span>
                     </div>
                 </div>
 
-                <div id="plan-advance" class="plan-item" data-plan-selected="false">
+                <div id="plan-advanced" class="plan-item" data-plan-selected="false">
                     <img src="assets/images/icon-arcade.svg" alt="icon advanced" width="40" height="40">
                     <div class="plan-item-info">
                         <h2>Advanced</h2>
-                        <p>$12/mo</p>
+                        <p id="plan-advanced-price">$12/mo</p>
                         <span>2 months free</span>
                     </div>
                 </div>
@@ -106,7 +106,7 @@
                     <img src="assets/images/icon-pro.svg" alt="icon advanced" width="40" height="40">
                     <div class="plan-item-info">
                         <h2>Pro</h2>
-                        <p>$15/mo</p>
+                        <p id="plan-pro-price">$15/mo</p>
                         <span>2 months free</span>
                     </div>
                 </div>
@@ -119,9 +119,6 @@
                         <span>Yearly</span>
                     </label>
                 </div>
-
-                <!-- Go Back -->
-                <!-- Next Step -->
             </section>
 
             <section id="step-3" class="step hidden">
@@ -136,7 +133,7 @@
                             <p>Access to multiplayer games</p>
                         </div>
                     </div>
-                    <span>+$1/mo</span>
+                    <span id="addon-item-online-service">+$1/mo</span>
                 </label>
 
                 <label for="larger-storage" class="addon-item">
@@ -147,7 +144,7 @@
                             <p>Extra 1TB of cloud save</p>
                         </div>
                     </div>
-                    <span>+$2/mo</span>
+                    <span id="addon-item-larger-storage">+$2/mo</span>
                 </label>
 
                 <label for="custom-profile" class="addon-item">
@@ -158,11 +155,8 @@
                             <p>Custom theme on your profile</p>
                         </div>
                     </div>
-                    <span>+$2/mo</span>
+                    <span id="addon-item-custom-profile">+$2/mo</span>
                 </label>
-
-                <!-- Go Back -->
-                <!-- Next Step -->
             </section>
 
             <section id="step-4" class="step hidden">
@@ -170,31 +164,12 @@
                 <p>Double-check everything looks OK before confirming.</p>
 
                 <!-- Dynamically add subscription and add-on selections here -->
-                <div class="plan-container">
-                    <div class="resume-plan-container">
-                        <div>
-                            <h3>Arcade (Monthly)</h3>
-                            <button id="button-change-plan">Change</button>
-                        </div>
-                        <span>$9/mo</span>
-                    </div>
-                    <div class="resume-addons-container">
-                        <p>Online service <span>+1/mo</span></p>
-                        <p>Larger storage <span>+2/mo</span></p>
-                    </div>
-                </div>
-
-                <p class="total-resume">Total (per month/year) <span>+12/mo</span></p>
-
-                <!-- Go Back -->
-                <!-- Confirm -->
+                <div class="dynamic-plan-container"></div>
             </section>
 
             <section id="step-5" class="step thanks hidden">
                 <img src="assets/images/icon-thank-you.svg" alt="icon thank you" width="80" height="80">
-
                 <h1>Thank you!</h1>
-
                 <p>
                     Thanks for confirming your subscription! We hope you have fun
                     using our platform. If you ever need support, please feel free
