@@ -418,7 +418,13 @@ const handleSubmit = (event) => {
     return true
 }
 
+const handleStepButton = (event) => {
+    event.preventDefault()
+}
+
 form.addEventListener('submit', handleSubmit)
+
+stepButtons.forEach(button => button.addEventListener('click', handleStepButton))
 
 btnGoBack.addEventListener('click', handleGoBack)
 

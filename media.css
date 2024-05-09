@@ -1,11 +1,10 @@
 /* 1440px */
-/* @media (min-width: 90rem) { */
-@media (min-width: 900px) {
+@media (min-width: 90rem) {
     .app-container {
         max-width: 90rem;
         display: flex;
-        /* 160px */
-        margin-block: 10rem;
+        /* 100px */
+        margin-block: 6.25rem;
         border-radius: 1rem;
         padding: 1rem;
         /* 100px */
@@ -98,6 +97,7 @@
         #button-confirm,
         #button-next-step {
             padding: 1rem 2rem;
+            font-weight: var(--fw-semi-bold);
         }
     }
 
