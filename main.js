@@ -13,7 +13,6 @@ const onlineService = document.getElementById('online-service')
 const largerStorage = document.getElementById('larger-storage')
 const customProfile = document.getElementById('custom-profile')
 const addOnInputs = document.querySelectorAll('.addon-item-input')
-
 const dynamicPlanContainer = document.querySelector('.dynamic-plan-container')
 const footerStep = document.querySelector('.footer-step')
 
@@ -180,10 +179,6 @@ const showStep = (stepNumber) => {
     if (currentStep == 5) {
         footerStep.classList.add('hidden')
     }
-}
-
-const dispathSubmit = () => {
-    return form.dispatchEvent(new Event('submit'))
 }
 
 const handleGoBack = (event) => {
@@ -417,10 +412,6 @@ const handleSubmit = (event) => {
         showStep(stepButtons[3].getAttribute('value'))
     }
     else if (currentStep == 4) {
-        const isValid = validateInputStep4()
-
-        if (!isValid) return false
-
         showStep(5)
     }
 

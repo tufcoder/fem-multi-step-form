@@ -1,0 +1,77 @@
+/* 1440px */
+@media (min-width: 90rem) {
+    .app-container {
+        max-width: 90rem;
+        display: flex;
+        /* 160px */
+        margin-block: 10rem;
+        border-radius: 1rem;
+        padding: 1rem;
+        /* 100px */
+        padding-inline-end: 6.25rem;
+        /* 100px */
+        gap: 6.25rem;
+        background-color: var(--white);
+        box-shadow: 0 0 0.5rem var(--shadow);
+    }
+
+    .aside {
+        /* 274px */
+        width: 17.125rem;
+        /* 568px */
+        height: 35.5rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0;
+        border-radius: 1rem;
+        padding: 0 2rem;
+        background-image: url('assets/images/bg-sidebar-desktop.svg');
+    }
+
+    .step-number,
+    .step-title {
+        display: block;
+        text-transform: uppercase;
+        font-size: var(--fs-14);
+        color: var(--coolGray);
+    }
+
+    .step-item {
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .step-item:first-child {
+        margin-block-start: 2.5rem;
+    }
+
+    .step-title {
+        /* 2px */
+        letter-spacing: .125rem;
+        font-weight: var(--fw-bold);
+        font-size: var(--fs-normal);
+        color: var(--alabaster);
+    }
+
+    .desktop-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .main {
+        top: 0;
+        box-shadow: none;
+        margin-inline: 0;
+        margin-block-start: 3rem;
+        padding-inline-end: 0.5rem;
+
+        h1 {
+            font-size: 2rem;
+        }
+    }
+
+    .step {
+        padding: 0;
+    }
+}
